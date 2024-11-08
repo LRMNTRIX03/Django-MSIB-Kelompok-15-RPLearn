@@ -1,0 +1,68 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container">
+      <a href="{% url 'UserWeb:user.dashboard' %}" class="d-inline-flex link-body-emphasis text-decoration-none">
+        <img
+          src="{% static 'UserWeb/assets/logorpl.222-removebg-preview.png' %}"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+      </a>
+      <H3 class="mt-2 mx-2">RPLearn</H3>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll d-flex justify-content-center align-items-center" style="--bs-scroll-height: 100px; font-size: 14px; font-weight: 460;">
+          <li class="nav-item dropdown rounded">
+            <a class="nav-link dropdown-toggle text-black px-3 d-flex flex-row align-items-center mt-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <h5>Program</h5>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'UserWeb:user.kategoriFront'%}">Front-End</a></li>
+              <li><a class="dropdown-item" href="{% url 'UserWeb:user.kategoriback' %}">Back-End</a></li>
+              <li><a class="dropdown-item" href="#">Full-Stack</a></li>
+            </ul>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link text-black" href="/detail"><h5 class="mt-2">Kegiatanku</h5></a>
+          </li>
+          <li class="nav-item roundeds">
+            <a class="nav-link text-black" href="{% url 'UserWeb:user.about' %}"><h5 class="mt-2">Tentang Kami</h5></a>
+          </li>
+        </ul>
+        <div>
+          {% if user.is_authenticated %}
+          <button type="button" class="btn rounded px-4" style="color: #0E2F51; border-color: #0E2F51;" data-bs-toggle="modal" data-bs-target="#logoutModal">
+            Logout
+          </button>
+          {% else %}
+          <a type="button" href="{% url 'auth:login' %}" class="btn rounded px-4" style="color: #0E2F51; border-color: #0E2F51;" id="btn">Login</a>
+          {% endif %}
+          <a type="button" href="{% url 'auth:register' %}" class="btn text-white custom-btn rounded px-4" style="background-color: #0E2F51;" id="btn">Daftar</a>
+      </div>
+    </div>
+</nav>
+
+
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logoutModalLabel">Konfirmasi Logout</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Apakah Anda yakin ingin keluar?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <form action="{% url 'auth:logout' %}" method="get">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

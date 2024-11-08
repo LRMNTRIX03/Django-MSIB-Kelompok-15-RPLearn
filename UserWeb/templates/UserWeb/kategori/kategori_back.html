@@ -1,0 +1,145 @@
+{% extends 'UserWeb/base_user.html' %}
+{% load static %}
+
+{% block navbar %}
+{% include 'UserWeb/Snippets/navbar.html' %}
+{% endblock %}
+{% block Sidebar %}
+{% include 'UserWeb/Snippets/sidebar.html' %}
+{% endblock %}
+{% block content %}
+<div class="container mt-5 pt-5">
+  <div class="header text-center" style="border-radius: 14px;">
+  <h1 class="judul-kat">Katalog Kelas</h1>
+  <p>Tingkatkan kemampuan digitalmu dengan mengikuti kelas-kelas berbasis industri 
+      <br>yang disediakan oleh REKAPAN, dirancang untuk membekali kamu dengan keterampilan terkini.</p>
+      <center>
+        <div class="input-group" style="width: 30%;">
+          <input id="search-class" class="form-control" placeholder="Cari nama kelas" type="text" />
+          <span class="input-group-text">
+              <i class="fas fa-search"></i>
+        </span>
+      </div>
+      </center>
+</div>
+
+  <div class="row mt-4">
+      <div class="col-md-3" >
+          <h1 class="judul">Kategori Pembelajaran</h1>
+          <ul class="list-unstyled">
+              <li>
+                  <input id="front" type="radio" name="topik" />
+                  <label for="front">Front-End</label>
+              </li>
+              <li>
+                  <input id="back" type="radio" name="topik" />
+                  <label for="back">Back-End</label>
+              </li>
+              <li>
+                  <input id="fullstack" type="radio" name="topik" />
+                  <label for="fullstack">Full-Stack</label>
+              </li>
+          </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9" style="border: 1px solid #ddd; border-radius: 8px; background-color: #fff;">
+          <div class="container my-4">
+              <h1 class="judul">Back-End Web Depeloper</h1>
+              <div class="row mt-4">
+                  <!-- Card 1 -->
+                   {% for x in gambarCards %}
+                   <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="{% static x.gambar %}" class="card-img-top" alt="kategori Kelas">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ x.judul }}</h5>
+                            <p class="card-text"><i class="fas fa-file-alt text-primary"></i> {{ x.jumlahMateri }}</p>
+                            <p class="card-text"><i class="fas fa-star text-warning"></i> {{ x.ulasan }}</p>
+                            <p class="card-text text-red font-weight-bold">Gratis</p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end">
+                            <i class="far fa-heart text-muted"></i>
+                        </div>
+                    </div>
+                </div>
+                   {% endfor %}
+                 
+
+                  
+
+                  
+            
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="container my-5">
+  <!-- Kotak Tentang SkillPath -->
+  <div class="info-box p-4" style="border: 1px solid #ddd; border-radius: 8px; background-color: #ffff; width: 100%; margin: 0 auto;">
+  <h2 class="judul" >Tentang SkillPath</h2>
+  <p class="info-content" style="font-size: 16px; color: #333;">
+  Lewat SkillPath kalian bisa mengambil Sertifikasi.<br>
+  Di SkillPath Front-End Web Developer ini, kalian akan diberikan sebuah tugas untuk membuat website sederhana menggunakan HTML, CSS, dan JavaScript dasar.<br>
+  Syarat untuk memulai SkillPath ini adalah kalian harus terlebih dahulu mendaftar dan menyelesaikan kelas HTML, CSS, dan JavaScript dasar.<br>
+  Setelah menyelesaikan SkillPath ini, kalian akan mendapatkan SkilBadge sesuai dengan nilai dari hasil tugas akhir kalian.
+  </p>
+  </div>
+
+  <br>
+
+  <!-- Box 2: Persiapan SkillPath -->
+  <div class="info-box p-4" style="border: 1px solid #ddd; border-radius: 8px; background-color: #ffff; width: 100%; margin: 0 auto;">
+      <h2 class="judul" >Persiapan SkillPath</h2>
+      <ul class="info-content" style="font-size: 16px; color: #333;">
+          <li>Gunakan komputer atau laptop dengan koneksi internet yang stabil.</li>
+          <li>Install browser (disarankan menggunakan Chrome).</li>
+          <li>Mendaftar dan menyelesaikan kelas HTML, CSS, dan JavaScript Dasar.</li>
+      </ul>
+  </div>
+
+
+
+</div> 
+</div>
+</div>
+
+ 
+<!-- Footer -->
+<footer class="p-5">
+    <div class="footer-content" style="width: 80%; margin: 0 auto;" >
+      <div class="footer-logo">
+        <img src="{% static 'UserWeb/assets/logorpl.222-removebg-preview.png' %}" alt="RPLearn Logo" />
+        <p></p>
+      </div>
+      <div class="footer-contact">
+        <h3>Kontak</h3>
+        <p>
+          Email:
+          <a
+            style="text-decoration: none; color: #f4f4f5"
+            href="mailto:rplearn@umsida.ac.id"
+            >RPlearn@umsida.ac.id</a
+          >
+        </p>
+        <p>
+          Jl. Raya Gelam No.250, Pagerwaja, Gelam<br />
+          Kec. Candi, Kabupaten Sidoarjo, Jawa Timur 61271
+        </p>
+        <p>Phone: +62 851-7520 2106</p>
+      </div>
+      <div class="footer-follow">
+        <h3>Follow</h3>
+        <div class="social-icons d-flex flex-column">
+          <a href="#" class="text-decoration-none m-2"><i class="fab fa-instagram"></i> RPLearn</a>
+          <a href="#" class="text-decoration-none m-2"><i class="fab fa-youtube"></i> RPLearn</a>
+          <a href="#" class="text-decoration-none m-2"><i class="fab fa-whatsapp"></i> RPLearn</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-credit" style="margin-left: 50px;">© 2024. Kelompok 15</p>
+</footer>
+{% endblock %}

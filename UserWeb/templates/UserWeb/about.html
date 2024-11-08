@@ -1,0 +1,175 @@
+{% extends 'UserWeb/base_user.html' %}
+{% load static %}
+
+{% block navbar %}
+{% include 'UserWeb/Snippets/navbar.html' %}
+{% endblock %}
+{% block Sidebar %}
+{% include 'UserWeb/Snippets/sidebar.html' %}
+{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-content">
+      <div class="hero-container1">
+          <p class="hero-title">Tentang RPLearn</p>
+          <h1 class="hero-subtitle">Apa sih RpLearn itu?</h1>
+          <img src="{% static 'UserWeb/assets/logorpl.222-removebg-preview.png' %}" alt="Logo RPLearn" class="hero-logo">
+      </div>
+      <div class="hero-container2">
+          <p class="hero-desc">
+              RpLearn adalah sebuah platform pendidikan yang membantu Anda menguasai keterampilan pemrograman melalui
+              pengalaman langsung. Di RPLearn, kami percaya bahwa pembelajaran yang paling efektif datang dari praktik nyata, 
+              di mana pengguna dapat belajar, mengembangkan, dan menerapkan ilmu pemrograman dengan menyelesaikan proyek-proyek 
+              yang sesuai dengan kebutuhan industri.
+          </p>
+      </div>
+  </div>
+</section>
+
+<section class="vm-container">
+  <div class="vm-content">
+      <div class="vm-container1">
+          <h4>Visi RPLearn</h4>
+          <p>Membangun Generasi Teknologi masa Depan Melalui Pembelajaran Proyek Nyata</p>
+      </div>
+      <div class="vm-container2">
+          <h4>Misi RPLearn</h4>
+          <p>Misi Kami adalah menjembatani kesenjangan antara pendidikan formal dan dunia Industri dengan
+              menawarkan pembelajaran  berbasis proyek yang memungkinkan siswa untuk mengasah keterampilan mereka dalam lingkungan nyata
+          </p>
+
+      </div>
+  </div>
+</section>
+
+<section class="should-container">
+  <div class="should-content">
+      <h1>Kenapa Harus Memilih RPLearn?</h1>
+      <div class="should-card">
+          <img src ="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="should-img">
+          <div class="should-overlay">
+              <h3>Pembelajaran Berbasis Proyek</h3>
+          <p>Menerpakan metode pembelajaran berbasis proyek yang memungkinkan anda untuk mempelajari keterampilan baru dengan langsung terjun ke proyek nyata.</p>
+          </div>
+          
+      </div>
+      <div class="should-card">
+          <img src="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="should-img">
+          <div class="should-overlay">
+              <h3>Membangun Portofolio Nyata</h3>
+          <p>Setiap proyek yang diselesaikan di RPLearn dapat diintegrasikan ke dalam portofolio digital pengguna yang dapat digunakan untuk melamar pekerjaan dan mengembangkan karir</p>
+          </div>
+          
+      </div>
+      <div class="should-card">
+          <img src="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="should-img">
+          <div class="should-overlay">
+              <h3>Materi yang selalu Terupdate</h3>
+          <p>Di RPLearn, Anda selalu mendapatkan akses ke pembelajaran dan proyek yang mengikuti perkembangan teknologi terbaru dari bahasa pemrograman yang populer hingga framework yang digunakan di Industri</p>
+          </div>
+      </div>
+</section>
+
+<section class="tim-container">
+  <h1 class="tim-title">Tim Kami</h1>
+  <div class="tim-content">
+      <div class="tim-card-ganjil">
+          <img src="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="tim-img">
+          <div class="tim-overlay">
+              <h3>Lutfi Rizaldi Mahida</h3>
+              <p>Full-Stack Developer</p>
+              <a href="#">Lihat Detail</a>
+          </div>
+      </div> 
+
+      <div class="tim-card-genap">
+          <img src="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="tim-img">
+          <div class="tim-overlay">
+              <h3>Lutfi Rizaldi Mahida</h3>
+              <p>Full-Stack Developer</p>
+              <a href="#">Lihat Detail</a>
+          </div>
+      </div>
+
+      <div class="tim-card-ganjil">
+          <img src="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="tim-img">
+          <div class="tim-overlay">
+              <h3>Lutfi Rizaldi Mahida</h3>
+              <p>Full-Stack Developer</p>
+              <a href="#">Lihat Detail</a>
+          </div>
+      </div>
+
+      <div class="tim-card-genap">
+          <img src="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="tim-img">
+          <div class="tim-overlay">
+              <h3>Lutfi Rizaldi Mahida</h3>
+              <p>Full-Stack Developer</p>
+              <a href="#">Lihat Detail</a>
+          </div>
+      </div>
+
+      <div class="tim-card-ganjil">
+          <img src="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="tim-img">
+          <div class="tim-overlay">
+              <h3>Lutfi Rizaldi Mahida</h3>
+              <p>Full-Stack Developer</p>
+              <a href="#">Lihat Detail</a>
+          </div>
+      </div>
+      <div class="tim-card-genap">
+          <img src="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="tim-img">
+          <div class="tim-overlay">
+              <h3>Lutfi Rizaldi Mahida</h3>
+              <p>Full-Stack Developer</p>
+              <a href="#">Lihat Detail</a>
+          </div>
+      </div>
+      <div class="tim-card-ganjil">
+          <img src="{% static 'UserWeb/assets/1..jpg' %}" alt="" class="tim-img">
+          <div class="tim-overlay">
+              <h3>Lutfi Rizaldi Mahida</h3>
+              <p>Full-Stack Developer</p>
+              <a href="#">Lihat Detail</a>
+          </div>
+      </div>
+  </div> 
+</section>
+<section class="join-container">
+  <div class="join-content">
+      <h1 >Bergabunglah Bersama Kami!</h1>
+      <p >Apakah Anda ingin memulai karier di dunia teknologi, atau memperdalam keterampilan yang sudah Anda miliki Di RPLearn, kami siap
+          mendukung Anda di setiap langkah perjalanan. Bergabunglah dengan komunitas pembelajar yang bersemangat, mentor yang berdedikasi, dan proyek yang
+          menantang untuk meraih masa depan karier yang cemerlang.
+      </p>
+      
+</section>
+
+
+
+
+
+<footer>
+  <div class="footer-content">
+      <div class="footer-logo">
+          <img src="{% static 'UserWeb/assets/logorpl.222-removebg-preview.png'%}" alt="RPLearn Logo">
+      </div>
+      <div class="footer-contact">
+          <h3>Kontak</h3>
+          <p>Email: <a style="text-decoration: none; color:#F4F4F5;" href="mailto:rplearn@umsida.ac.id">RPlearn@umsida.ac.id</a></p>
+          <p>Jl. Raya Gelam No.250, Pagerwaja, Gelam<br>
+          Kec. Candi, Kabupaten Sidoarjo, Jawa Timur 61271</p>
+          <p>Phone: +62 851-7520 2106</p>
+      </div>
+      <div class="footer-follow">
+          <h3>Follow</h3>
+          <div class="social-icons">
+              <a href="https://instagram.com"><img src="Assets/Instagram.png" alt="Instagram" class="social-logo">Instagram</a>
+              <a href="https://youtube.com"><img src="/Assets/google.png" alt="YouTube" class="social-logo"> YouTube</a>
+              <a href="https://whatsapp.com"><img src="/Assets/facebook.png" alt="WhatsApp" class="social-logo"> WhatsApp</a>
+          </div>
+      </div>
+  </div>
+  <p class="footer-credit">© 2024. Kelompok 15</p>
+</footer>
+{% endblock %}

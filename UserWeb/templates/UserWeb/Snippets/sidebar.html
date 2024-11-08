@@ -1,0 +1,62 @@
+<!-- Sidebar -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+    <div class="offcanvas-header" style="background-color: #0E2F51;">
+      <h5 class="offcanvas-title text-white" id="sidebarLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="background-color: white;"></button>
+    </div>
+    <div class="offcanvas-body" style="background-color: #0E2F51;">
+      <ul class="navbar-nav">
+        <li class="logo mb-3">
+          <img src="./Assets/logorpl.222-removebg-preview.png" alt="Logo" class="img-fluid" width="50px" height="50px">
+        </li>
+        <li class="side-item dropdown rounded">
+          <a class="nav-link dropdown-toggle text-white d-flex flex-row align-items-center mt-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <p>Program</p>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/materi.html">Materi</a></li>
+            <li><a class="dropdown-item" href="#">Front End</a></li>
+            <li><a class="dropdown-item" href="{% url 'user.kategoriback'}">Back End</a></li>
+            <li><a class="dropdown-item" href="#">Full-Stack</a></li>
+          </ul>
+        </li>
+        <li class="side-item">
+          <a class="nav-link text-white" href="{% url 'user.dashboard'}">Dashboard</a>
+        </li>
+        <li class="side-item">
+          <a class="nav-link text-white" href="#kegiatanku">Kegiatanku</a>
+        </li>
+        <li class="side-item">
+          <a class="nav-link text-white" href="{% url 'user.about' %}">Tentang Kami</a>
+        </li>
+        <li class="btn-side">
+          {% if user.is_authenticated %}
+          <button type="button" class="btn rounded px-4" style="color: #0E2F51; border-color: #0E2F51;" data-bs-toggle="modal" data-bs-target="#logoutModal">
+          {% else %}
+          <button class="btn btn-primary w-100 my-2" id="btn-login-s">Login</button>
+          {% endif %}
+          <button class="btn btn-secondary w-100" id="btn-regis-s">Daftar</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="logoutModalLabel">Konfirmasi Logout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Apakah Anda yakin ingin keluar?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <form action="{% url 'auth:logout' %}" method="get">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
